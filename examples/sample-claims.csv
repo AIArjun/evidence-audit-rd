@@ -1,0 +1,6 @@
+id,claim,verdict,source_refs,risk_if_wrong,recommended_next_step
+C1,Elevated temperature accelerates SEI layer growth consuming cyclable lithium,SUPPORTED,Wiley 2025; IEEE 2022; ECS 2017,Overoptimistic lifetime predictions and undersized thermal management,Use as foundational claim with quantified SEI growth rate model
+C2,Electrolyte decomposition and oxidation are primary high-temperature pathways,SUPPORTED,Wiley 2025; IEEE 2022,Underestimates resistance growth from oxidation products,Cross-reference electrolyte-specific decomposition temperatures
+C3,Cathode dissolution releases transition-metal ions incorporated into SEI,SUPPORTED,ECS 2017; IEEE 2022,Misses non-linear fade trigger at elevated temperature,Use with qualification; flagged for future investigation
+C4,Loss of active material is a distinct independent primary mechanism,PARTIALLY_SUPPORTED,Wiley 2025; IEEE 2022,Double-counting capacity loss in degradation models,Refine to note synergy with SEI growth; seek source quantifying LAM independently
+C5,Lithium plating is a significant high-temperature degradation mechanism,UNSUPPORTED,Wiley 2025; IEEE 2022; ECS 2017,Physically incorrect pathway invalidating model predictions,Reject as stated; lithium plating is primarily a low-temperature mechanism

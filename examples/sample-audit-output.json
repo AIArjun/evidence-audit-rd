@@ -1,0 +1,61 @@
+{
+  "question": "What are the common degradation mechanisms for lithium-ion battery cells at elevated temperatures?",
+  "sources": [
+    { "ref": "Wiley 2025", "type": "experimental" },
+    { "ref": "IEEE 2022", "type": "review" },
+    { "ref": "ECS 2017", "type": "electrochemical model" }
+  ],
+  "trust_score": 0.70,
+  "verdict_counts": {
+    "supported": 3,
+    "partially_supported": 1,
+    "unsupported": 1
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Elevated temperature accelerates SEI layer growth on the anode, consuming cyclable lithium and increasing internal resistance.",
+      "verdict": "SUPPORTED",
+      "evidence_summary": "Multiple sources describe accelerated SEI growth at elevated temperature as a primary degradation pathway (paraphrased).",
+      "source_refs": ["Wiley 2025", "IEEE 2022", "ECS 2017"],
+      "risk_if_wrong": "Underestimating SEI growth at high temperature leads to overoptimistic lifetime predictions and undersized thermal management.",
+      "recommended_next_step": "Use as a foundational claim. Pair with a quantified SEI growth rate vs. temperature model."
+    },
+    {
+      "id": "C2",
+      "claim": "Electrolyte decomposition and oxidation are primary high-temperature degradation pathways.",
+      "verdict": "SUPPORTED",
+      "evidence_summary": "Sources identify electrolyte decomposition among the primary high-temperature aging mechanisms (paraphrased).",
+      "source_refs": ["Wiley 2025", "IEEE 2022"],
+      "risk_if_wrong": "Failing to account for electrolyte oxidation products underestimates resistance growth.",
+      "recommended_next_step": "Cross-reference against electrolyte-specific decomposition temperatures."
+    },
+    {
+      "id": "C3",
+      "claim": "Cathode active-material dissolution releases transition-metal ions that migrate to the anode and are incorporated into the SEI.",
+      "verdict": "SUPPORTED",
+      "evidence_summary": "Sources describe transition-metal dissolution and migration affecting the anode SEI (paraphrased).",
+      "source_refs": ["ECS 2017", "IEEE 2022"],
+      "risk_if_wrong": "Ignoring cross-electrode ion migration can miss a non-linear fade trigger at elevated temperature.",
+      "recommended_next_step": "Use with qualification; one source flagged this effect for future investigation."
+    },
+    {
+      "id": "C4",
+      "claim": "Loss of active material (LAM) driven by electrode drying, binder degradation, and mechanical particle cracking is a distinct primary mechanism.",
+      "verdict": "PARTIALLY_SUPPORTED",
+      "evidence_summary": "Sources confirm LAM occurs but describe it as synergistic with SEI growth rather than fully independent (paraphrased).",
+      "source_refs": ["Wiley 2025", "IEEE 2022"],
+      "risk_if_wrong": "Treating LAM as fully independent from SEI growth could double-count capacity loss in degradation models.",
+      "recommended_next_step": "Refine the claim to note synergy with SEI growth; seek a source that quantifies LAM independently."
+    },
+    {
+      "id": "C5",
+      "claim": "Lithium plating is a significant degradation mechanism at elevated temperatures and contributes to capacity fade under high-temperature cycling.",
+      "verdict": "UNSUPPORTED",
+      "evidence_summary": "Retrieved sources contradict this; lithium plating is associated with low-temperature conditions, not elevated temperature (paraphrased).",
+      "source_refs": ["Wiley 2025", "IEEE 2022", "ECS 2017"],
+      "risk_if_wrong": "Including lithium plating as a high-temperature mechanism introduces a physically incorrect pathway, invalidating model predictions and misdirecting thermal management design.",
+      "recommended_next_step": "Reject this claim as stated. Replace with: lithium plating is primarily a low-temperature mechanism. Flag for correction before any design decision."
+    }
+  ]
+}
