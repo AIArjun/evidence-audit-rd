@@ -27,11 +27,28 @@ Status values: **Accepted**, **Proposed**, **Superseded**.
 - **Decision:** Track the build with four documents: `BUILD_LOG.md`, `docs/day-1-plan.md`, `docs/product-decisions.md`, `docs/learning-notes.md`.
 - **Consequences:** Small per-step overhead to keep these current, in exchange for a traceable build history.
 
+## D4 — MVP target: narrow local slice first
+- **Date:** 2026-06-16 — Day 1 continued
+- **Status:** Accepted
+- **Context:** The standalone API (future-work #1) is the long-term target, but building it first risks investing in plumbing before the audit logic is proven.
+- **Decision:** Build a narrow local slice first, not a standalone API. Slice: one pasted AI answer → 3–5 extracted claims → checked against small trusted-source fixtures → one Markdown/JSON trust report, using four first-class verdicts (SUPPORTED / PARTIALLY SUPPORTED / UNSUPPORTED / CONTRADICTED). See `docs/step-0-slice.md`.
+- **Consequences:** Fastest path to a working verification core. API, retrieval, and UI are deferred. `CONTRADICTED` is preserved as a distinct verdict (never merged into `UNSUPPORTED`), since a contradicted claim is known-wrong, not merely unverified.
+
+## D5 — Stack: Python local pipeline first, FastAPI later
+- **Date:** 2026-06-16 — Day 1 continued
+- **Status:** Accepted
+- **Context:** Future work names FastAPI, but a service wrapper adds no value until the audit logic works.
+- **Decision:** Implement the slice as a Python local pipeline first; add FastAPI only after the audit logic works.
+- **Consequences:** No web framework, server, or endpoints yet. Logic runs from the command line / a script.
+
+## D6 — Source data: curated safe fixtures, no licensed passages
+- **Date:** 2026-06-16 — Day 1 continued
+- **Status:** Accepted
+- **Context:** The audit needs evidence to check against, but licensed publisher passages cannot be reproduced here (`docs/limitations.md`).
+- **Decision:** Use manually curated safe source fixtures — paraphrased source cards or clearly open-access / public-domain text. Do not reproduce licensed publisher passages.
+- **Consequences:** Fixtures are safe to commit. Audit results on fixtures are illustrative, not a benchmark.
+
 ---
 
 ## Pending (awaiting input)
-- **MVP target** for Day 1 — standalone API vs. a narrower slice.
-- **Stack** — Python/FastAPI (per future work) or alternative.
-- **Source data** approach for the MVP — paraphrased placeholders vs. other.
-
-_See `docs/day-1-plan.md` → Open questions._
+- _None. The Day 1 open questions (MVP target, stack, source data) are resolved by D4–D6 above._
