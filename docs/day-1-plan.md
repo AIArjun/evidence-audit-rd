@@ -18,7 +18,7 @@ Establish the control layer (tracking docs) and agree the foundation for the MVP
 
 ### In scope
 - **Step -1 — Control setup.** Create the four tracking documents (build log, this plan, product decisions, learning notes). _(done)_
-- **Step 0 — Confirm direction.** Lock the MVP target, stack, and Day 1 definition of done with the owner before writing application code.
+- **Step 0 — Confirm direction.** Lock the MVP target, stack, and Day 1 definition of done with the owner before writing application code. _(done — see `docs/step-0-slice.md`, D4–D6)_
 - **Step 1 — Repo skeleton _(proposed)_.** Lay out structure for application code aligned with the 7-node architecture in `docs/architecture.md`.
 
 ### Out of scope for Day 1
@@ -28,12 +28,15 @@ Establish the control layer (tracking docs) and agree the foundation for the MVP
 
 ## Definition of done (Day 1)
 - [ ] Four control documents exist and are committed.
-- [ ] MVP target and stack confirmed with owner and recorded in `docs/product-decisions.md`.
+- [x] MVP target and stack confirmed with owner and recorded in `docs/product-decisions.md`.
 - [ ] Repo skeleton (if approved) committed, with the build log updated.
 
-## Open questions (need owner input before Step 1)
-1. **MVP target:** Is Day 1's product goal the standalone runnable API (future-work #1), or a narrower slice first?
-2. **Stack:** Future work names FastAPI — confirm Python/FastAPI, or another stack?
-3. **Source data:** Use paraphrased placeholder sources (as in `examples/`) for the MVP, given licensed Redpine passages can't be reproduced here?
+## Open questions (resolved in Step 0)
 
-_This plan is a proposal. Steps after Step -1 are not started and are open to revision._
+All three are now decided — see `docs/product-decisions.md` and `docs/step-0-slice.md`:
+
+1. **MVP target:** ✅ Resolved — narrow local slice first, not a standalone API (D4).
+2. **Stack:** ✅ Resolved — Python local pipeline first; FastAPI later (D5).
+3. **Source data:** ✅ Resolved — curated safe fixtures (paraphrased source cards / open-access), no licensed passages (D6).
+
+_This plan is a proposal. Step 0 (slice definition) is complete — see `docs/step-0-slice.md`; later steps remain open to revision._

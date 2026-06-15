@@ -18,4 +18,15 @@ Each entry notes what was done, why, and anything that changed the plan. Append 
   - `docs/learning-notes.md` — running notes of what was learned while building.
 - No application code changed. This step only sets up the tracking layer.
 
-_Next: see `docs/day-1-plan.md` for the Day 1 steps and open questions._
+### Step 0 — Define the smallest end-to-end slice
+
+_2026-06-16 — Day 1 continued_
+
+- Branched `product-mvp/day-1-step-0-slice` from `origin/main` (Step -1 merged via PR #1).
+- Defined the smallest end-to-end audit slice in `docs/step-0-slice.md`: one pasted AI answer → 3–5 extracted claims → checked against small trusted-source fixtures → one Markdown/JSON trust report.
+- Recorded decisions D4–D6 in `docs/product-decisions.md`: narrow local slice first (not a standalone API), Python local pipeline first (FastAPI later), and curated safe source fixtures (no licensed passages).
+- Verdict scheme keeps four first-class labels — SUPPORTED / PARTIALLY SUPPORTED / UNSUPPORTED / CONTRADICTED — with `CONTRADICTED` never merged into `UNSUPPORTED`.
+- Marked the Day 1 plan's open questions resolved (point to D4–D6).
+- Documentation only — no product code, no Python implementation, no API/backend/frontend files.
+
+_Next (not started): implement the slice as a Python local pipeline (D5)._
